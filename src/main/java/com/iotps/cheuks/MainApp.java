@@ -48,6 +48,14 @@ public class MainApp extends Application {
             Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public void gotoRegisterFrame() {
+        try {
+            RegisterController register = (RegisterController) replaceSceneContent("/fxml/register.fxml", "/styles/login.css");
+            register.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     private Initializable replaceSceneContent(String fxml, String cssFile) throws Exception {
         FXMLLoader loader = new FXMLLoader();
